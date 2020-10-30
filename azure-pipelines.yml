@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  name: default
+
+
+
+# Azure PowerShell
+# Run a PowerShell script within an Azure environment
+- task: AzurePowerShell@4
+  inputs:
+    azureSubscription: azuresubscription
+    scriptType: 'FilePath' # Optional. Options: filePath, inlineScript
+    scriptPath: $(Build.SourcesDirectory)\deployvirtualmachine.ps1
+    #inline: '# You can write your Azure PowerShell scripts inline here. # You can also pass predefined and custom variables to this script using arguments' # Optional
+    #scriptArguments: # Optional
+    #errorActionPreference: 'stop' # Optional. Options: stop, continue, silentlyContinue
+    #failOnStandardError: false # Optional
+    azurePowerShellVersion: LatestVersion # Required. Options: latestVersion, otherVersion
+    #preferredAzurePowerShellVersion: # Required when azurePowerShellVersion == OtherVersion
