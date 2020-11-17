@@ -1,6 +1,7 @@
 # this file defines the consumers of  the secrets of the /epv/appdev/azurepipeline1/delegation/consumers
 # this is done by running the command 
 # by adding hosts to this consumer group
+# conjur policy load /epv/appdev/azurepipeline1/delegation consumers.yml
 
 # create a host, the api key will be returned
 - !host azureagent117
