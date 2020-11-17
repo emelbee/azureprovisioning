@@ -22,7 +22,7 @@ steps:
     secretsyml: secrets.yml
      
 
-- script: echo $() $(SqlToken)
+- script: echo $(pvwausername) $(pvwapassword)
 
 
 
