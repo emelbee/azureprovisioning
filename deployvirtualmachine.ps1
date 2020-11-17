@@ -79,7 +79,7 @@ $targetaddress = (Get-AzPublicIpAddress -ResourceGroupName myResourceGroupVM).Ip
   $newAccount.address = "$targetaddress"
   # The default Windows account is always Administrator...
   $newAccount.username = $username
-  $newAccount.password = $password
+  $newAccount.password = $PW
   $newAccount.accountName = $instanceid
   # Add the account to create to the accounts array
   $newAccounts.account = $newAccount
