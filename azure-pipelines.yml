@@ -16,7 +16,7 @@ steps:
   inputs:
     conjurapplianceurl: 'https://dapmaster.cybr.com'
     conjuraccount: 'cyberark'
-    conjurusername: 'host/ epv/appdev/application1/delegation/consumers/azureagent117'
+    conjurusername: 'host/ epv/appdev/application1/delegation/azureagent117'
     conjurapikey: '$(conjurkey-azureagent117)'
     ignoreSsl: true
     secretsyml: secrets.yml
