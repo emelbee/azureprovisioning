@@ -35,13 +35,6 @@ New-AzVm `
 # Define the FQDN for the REST APIs
 $FQDN = 'https://comp01.cybr.com'
 
-# get the api logon credentials
-# here we will use the dap integration
-# to retrieve the api credentials
-
-# We got the creds for the REST APIs so we are good to go!
- "$(Get-Date) Credentials retrieved, logging in to REST APIs"
-  
 
 
 $logonInfo = @{}
@@ -55,6 +48,16 @@ $logonInfo = @{}
     
   $logonInfo.username = $logonuser
   $logonInfo.password = $logonpwd
+  
+  # get the api logon credentials
+# here we will use the dap integration
+# to retrieve the api credentials
+
+# We got the creds for the REST APIs so we are good to go!
+ "$(Get-Date) Credentials retrieved, logging in to REST APIs"
+ "$(Get-Date) Credentials are $logonuser $logonpwd"
+ 
+  
   
 
 $targetaddress = (Get-AzPublicIpAddress -ResourceGroupName myResourceGroupVM).IpAddress
