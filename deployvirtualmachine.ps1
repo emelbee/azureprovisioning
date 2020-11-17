@@ -50,8 +50,11 @@ $logonInfo = @{}
   #$logonInfo.password = $password
   #$logonInfo.username = "dapprovisioning"
   #$logonInfo.password = "Cyberark1"
-  $logonInfo.username = $env:pvwausername
-  $logonInfo.password = $env:pvwapassword
+  $logonuser = ConvertFrom-SecureString -SecureString $env:pvwausername -AsPlainText
+  $logonpwd = ConvertFrom-SecureString -SecureString $env:pvwapassword -AsPlainText
+    
+  $logonInfo.username = $logonuser
+  $logonInfo.password = $logonpwd
   
 
 $targetaddress = (Get-AzPublicIpAddress -ResourceGroupName myResourceGroupVM).IpAddress
