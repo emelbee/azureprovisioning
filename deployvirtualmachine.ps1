@@ -52,7 +52,7 @@ $logonInfo = @{}
   $logonInfo.password = "Cyberark1"
 
 
-$targetpassword = "P@ssW0rD!"
+$targetpassword = $password
 $targetaddress = (Get-AzPublicIpAddress -ResourceGroupName myResourceGroupVM).IpAddress
 
  "$(Get-Date) test input done "
