@@ -36,18 +36,15 @@ New-AzVm `
 $FQDN = 'https://comp01.cybr.com'
 
 
-
 $logonInfo = @{}
 
-  #$logonInfo.username = $username
-  #$logonInfo.password = $password
-  #$logonInfo.username = "dapprovisioning"
-  #$logonInfo.password = "Cyberark1"
-  $logonuser = ConvertFrom-SecureString -SecureString $env:pvwausername -AsPlainText
-  $logonpwd = ConvertFrom-SecureString -SecureString $env:pvwapassword -AsPlainText
-    
-  $logonInfo.username = $logonuser
-  $logonInfo.password = $logonpwd
+  $logonInfo.username = "dapprovisioning"
+  $logonInfo.password = "Cyberark1"
+  
+  #$logonuser = ConvertFrom-SecureString -SecureString $env:pvwausername -AsPlainText
+  #$logonpwd = ConvertFrom-SecureString -SecureString $env:pvwapassword -AsPlainText
+  #$logonInfo.username = $logonuser
+  #$logonInfo.password = $logonpwd
   
   # get the api logon credentials
 # here we will use the dap integration
@@ -55,17 +52,12 @@ $logonInfo = @{}
 
 # We got the creds for the REST APIs so we are good to go!
  "$(Get-Date) Credentials retrieved, logging in to REST APIs"
- "$(Get-Date) Credentials are $logonuser $logonpwd"
- 
-  
   
 
 $targetaddress = (Get-AzPublicIpAddress -ResourceGroupName myResourceGroupVM).IpAddress
 
  "$(Get-Date) test input done "
- "$(Get-Date) the input used is $username $targetpassword $targetaddress"
  
-
 ##########################################################
   # Use REST APIs to logon to the CyberArk Vault
   ##########################################################
