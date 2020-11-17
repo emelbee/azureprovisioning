@@ -1,0 +1,8 @@
+# this file defines the consumers of  the secrets of the /epv/appdev/azurepipeline1/delegation/consumers
+# this is done by running the command 
+# by adding hosts to this consumer group
+
+
+- !grant
+  role: !group consumers
+  member: !host azureagent117
