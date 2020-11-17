@@ -2,6 +2,8 @@
 # this is done by running the command 
 # by adding hosts to this consumer group
 
+# create a host, the api key will be returned
+- !host azureagent117
 
 - !grant
   role: !group consumers
