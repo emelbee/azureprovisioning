@@ -7,7 +7,7 @@ New-AzResourceGroup `
 # temp password that will be changed afer onboarding
 
   $username = "breakglass"
-  $PW = [System.Web.Security.Membership]::GeneratePassword(24,10)
+  $PW = [System.Web.Security.Membership]::GeneratePassword(24,0)
   $password = ConvertTo-SecureString $PW -AsPlainText -Force
   $Cred = New-Object System.Management.Automation.PSCredential($username, $password)
    
@@ -52,7 +52,6 @@ $logonInfo = @{}
   $logonInfo.password = "Cyberark1"
 
 
-$targetpassword = $password
 $targetaddress = (Get-AzPublicIpAddress -ResourceGroupName myResourceGroupVM).IpAddress
 
  "$(Get-Date) test input done "
@@ -80,7 +79,7 @@ $targetaddress = (Get-AzPublicIpAddress -ResourceGroupName myResourceGroupVM).Ip
   $newAccount.address = "$targetaddress"
   # The default Windows account is always Administrator...
   $newAccount.username = $username
-  $newAccount.password = $targetpassword
+  $newAccount.password = $password
   $newAccount.accountName = $instanceid
   # Add the account to create to the accounts array
   $newAccounts.account = $newAccount
