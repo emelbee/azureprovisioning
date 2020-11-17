@@ -11,14 +11,30 @@ pool:
 
 
 steps:
-- task: AzurePowerShell@4
+#get the password for the API  to upload  the vault
+- task: GetConjurSecret@1
   inputs:
-    azureSubscription: azuresubscription
-    scriptType: 'FilePath' # Optional. Options: filePath, inlineScript
-    scriptPath: $(Build.SourcesDirectory)\deployvirtualmachine.ps1
+    conjurapplianceurl: 'https://dapmaster.cybr.com'
+    conjuraccount: 'cyberark'
+    conjurusername: 'host/ epv/appdev/application1/delegation/consumers/azureagent117'
+    conjurapikey: '$(conjurkey-azureagent117)'
+    ignoreSsl: true
+    secretsyml: secrets.yml
+     
+
+- script: echo $() $(SqlToken)
+
+
+
+
+#- task: AzurePowerShell@4
+#  inputs:
+#    azureSubscription: azuresubscription
+#    scriptType: 'FilePath' # Optional. Options: filePath, inlineScript
+#    scriptPath: $(Build.SourcesDirectory)\deployvirtualmachine.ps1
     #inline: '# You can write your Azure PowerShell scripts inline here. # You can also pass predefined and custom variables to this script using arguments' # Optional
     #scriptArguments: # Optional
     #errorActionPreference: 'stop' # Optional. Options: stop, continue, silentlyContinue
     #failOnStandardError: false # Optional
-    azurePowerShellVersion: LatestVersion # Required. Options: latestVersion, otherVersion
+#    azurePowerShellVersion: LatestVersion # Required. Options: latestVersion, otherVersion
     #preferredAzurePowerShellVersion: # Required when azurePowerShellVersion == OtherVersion
