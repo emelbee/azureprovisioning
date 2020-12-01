@@ -2,7 +2,7 @@
 
 New-AzResourceGroup `
    -ResourceGroupName "myResourceGroupVM" `
-   -Location "East US"
+   -Location "East US" `
    -Force
  
 # temp password that will be changed afer onboarding
@@ -22,7 +22,8 @@ New-AzVm `
     -SecurityGroupName "myNetworkSecurityGroup" `
     -PublicIpAddressName "myPublicIpAddress" `
     -OpenPorts 80,3389,139,445 `
-    -Credential $Cred 
+    -Credential $Cred `
+    -Force
 
 "$(Get-Date) azure resource created succesfully"
 
