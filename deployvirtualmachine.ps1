@@ -22,8 +22,8 @@ New-AzVm `
     -SecurityGroupName "myNetworkSecurityGroup" `
     -PublicIpAddressName "myPublicIpAddress" `
     -OpenPorts 80,3389,139,445 `
-    -Credential $Cred `
-    -Force
+    -Credential $Cred
+
 
 "$(Get-Date) azure resource created succesfully"
 
