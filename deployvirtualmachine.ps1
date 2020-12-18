@@ -47,8 +47,8 @@ $logonInfo = @{}
   #$logonInfo.password = "Cyberark1"
   
   
-$logonuser = ConvertFrom-SecureString -SecureString $env:pvwausername -AsPlainText	  $logonInfo.username = $(pvwausername)
-$logonpwd = ConvertFrom-SecureString -SecureString $env:pvwapassword -AsPlainText	  $logonInfo.password = $(pvwapassword)
+$logonuser = ConvertFrom-SecureString -SecureString $pvwausername -AsPlainText	
+$logonpwd = ConvertFrom-SecureString -SecureString $pvwapassword -AsPlainText	
 $logonInfo.username = $logonuser	
 $logonInfo.password = $logonpwd
  
