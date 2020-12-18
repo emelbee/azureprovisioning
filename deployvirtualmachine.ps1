@@ -46,12 +46,16 @@ $logonInfo = @{}
   #$logonInfo.username = "dapprovisioning"
   #$logonInfo.password = "Cyberark1"
   
-  $logonInfo.username = $(pvwausername)
-  $logonInfo.password = $(pvwapassword)
   
+$logonuser = ConvertFrom-SecureString -SecureString $env:pvwausername -AsPlainText	  $logonInfo.username = $(pvwausername)
+$logonpwd = ConvertFrom-SecureString -SecureString $env:pvwapassword -AsPlainText	  $logonInfo.password = $(pvwapassword)
+$logonInfo.username = $logonuser	
+$logonInfo.password = $logonpwd
  
  
- # get the api logon credentials
+ 
+ 
+# get the api logon credentials
 # here we will use the dap integration
 # to retrieve the api credentials
 
