@@ -43,14 +43,14 @@ $FQDN = 'https://comp01.cybr.com'
 
 $logonInfo = @{}
 
-  #$logonInfo.username = "dapprovisioning"
-  #$logonInfo.password = "Cyberark1"
+ $logonInfo.username = "dapprovisioning"
+ $logonInfo.password = "Cyberark1"
   
   
-$logonuser = ConvertFrom-SecureString -SecureString $pvwausername -AsPlainText	
-$logonpwd = ConvertFrom-SecureString -SecureString $pvwapassword -AsPlainText	
-$logonInfo.username = $logonuser	
-$logonInfo.password = $logonpwd
+#$logonuser = ConvertFrom-SecureString -SecureString $pvwausername -AsPlainText	
+#$logonpwd = ConvertFrom-SecureString -SecureString $pvwapassword -AsPlainText	
+#$logonInfo.username = $logonuser	
+#$logonInfo.password = $logonpwd
  
  
  
