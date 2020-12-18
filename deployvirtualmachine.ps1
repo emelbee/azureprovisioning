@@ -1,5 +1,8 @@
 # deploy a new windows machine in azure
 
+param ($pvwausername, $pvwapassword)
+Write-Host "$pvwausername $pvwapassword"
+
 New-AzResourceGroup `
    -ResourceGroupName "myResourceGroupVM" `
    -Location "East US" `
@@ -40,15 +43,15 @@ $FQDN = 'https://comp01.cybr.com'
 
 $logonInfo = @{}
 
-  $logonInfo.username = "dapprovisioning"
-  $logonInfo.password = "Cyberark1"
+  #$logonInfo.username = "dapprovisioning"
+  #$logonInfo.password = "Cyberark1"
   
-  #$logonuser = ConvertFrom-SecureString -SecureString $env:pvwausername -AsPlainText
-  #$logonpwd = ConvertFrom-SecureString -SecureString $env:pvwapassword -AsPlainText
-  #$logonInfo.username = $logonuser
-  #$logonInfo.password = $logonpwd
+  $logonInfo.username = $(pvwausername)
+  $logonInfo.password = $(pvwapassword)
   
-  # get the api logon credentials
+ 
+ 
+ # get the api logon credentials
 # here we will use the dap integration
 # to retrieve the api credentials
 
