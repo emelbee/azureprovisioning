@@ -38,7 +38,7 @@ steps:
     scriptType: 'FilePath' # Optional. Options: filePath, inlineScript
     scriptPath: $(Build.SourcesDirectory)\deployvirtualmachine.ps1
     #inline: '# You can write your Azure PowerShell scripts inline here. # You can also pass predefined and custom variables to this script using arguments' # Optional
-    scriptArguments: '-pvwausername $(pvwausername) -pvwapassword $(pvwapassword)'# Optional
+    #scriptArguments: '-pvwausername $(pvwausername) -pvwapassword $(pvwapassword)'# Optional
     #errorActionPreference: 'stop' # Optional. Options: stop, continue, silentlyContinue
     #failOnStandardError: false # Optional
     azurePowerShellVersion: LatestVersion # Required. Options: latestVersion, otherVersion
