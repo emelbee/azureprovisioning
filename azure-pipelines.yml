@@ -19,17 +19,17 @@ variables:
 
 steps:
 #get the password for the API  to upload  the vault
-- task: GetConjurSecret@1
-  inputs:
-    conjurapplianceurl: 'https://dapmaster.cybr.com'
-    conjuraccount: 'cyberark'
-    conjurusername: 'host/epv/appdev/azurepipeline1/delegation/azureagent117'
-    conjurapikey: '$(conjurkey-azureagent1171)'
-    ignoreSsl: true
-    secretsyml: secrets.yml
+#- task: GetConjurSecret@1
+#  inputs:
+#    conjurapplianceurl: 'https://dapmaster.cybr.com'
+#    conjuraccount: 'cyberark'
+#    conjurusername: 'host/epv/appdev/azurepipeline1/delegation/azureagent117'
+#    conjurapikey: '$(conjurkey-azureagent1171)'
+#    ignoreSsl: true
+#    secretsyml: secrets.yml
      
 
-- script: echo $(pvwausername) $(pvwapassword)
+# - script: echo $(pvwausername) $(pvwapassword)
 
 
 - task: AzurePowerShell@4
