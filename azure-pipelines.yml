@@ -10,12 +10,12 @@ trigger:
 pool:
   name: default
   
-variables:
-- group: pvwa
-- name: pvwausername
-  value: 'geheim'
-- name: pvwapassword
-  value: 'geheim'  
+#variables:
+#- group: pvwa
+#- name: pvwausername
+#  value: 'geheim'
+#- name: pvwapassword
+#  value: 'geheim'  
 
 
 steps:
